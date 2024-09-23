@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:recipe_app/constants.dart';
 
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({super.key});
@@ -25,7 +24,7 @@ class SplashViewBody extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 5,
           ),
           Image.asset(
-            "assets/images/download-removebg-preview.png",
+            kLogo,
             width: MediaQuery.of(context).size.width / 1.2,
           ),
           const SizedBox(height: 20),
@@ -34,7 +33,7 @@ class SplashViewBody extends StatelessWidget {
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.w900,
-              color: Color(0XFF0A3948),
+              color: kTextColor,
               fontFamily: "Poppins",
             ),
           ),
