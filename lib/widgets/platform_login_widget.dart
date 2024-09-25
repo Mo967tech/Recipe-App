@@ -15,7 +15,6 @@ class PlatformLoginWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: Card(
-        
         child: ListTile(
           onTap: onTap,
           contentPadding: EdgeInsets.zero,
