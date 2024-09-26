@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/widgets/custom_field_name.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final Icon? icon;
+  final Widget? icon;
   final String hintText, customFieldName;
+  final TextInputType textInputType;
+  final bool obsureText;
   const CustomTextFormField({
     super.key,
+    required this.textInputType,
     required this.hintText,
     required this.customFieldName,
+    this.obsureText = false,
     this.icon,
   });
 
@@ -18,6 +22,8 @@ class CustomTextFormField extends StatelessWidget {
         CustomFieldName(customFieldName: customFieldName),
         Card(
           child: TextFormField(
+            obscureText: obsureText,
+            keyboardType: textInputType,
             validator: (value) {
               if (value == null ? true : value.isEmpty) {
                 return "Field Is Required";
@@ -25,7 +31,7 @@ class CustomTextFormField extends StatelessWidget {
               return null;
             },
             decoration: InputDecoration(
-              prefixIcon: icon,
+              suffixIcon: icon,
               contentPadding: const EdgeInsets.symmetric(
                 vertical: 15,
                 horizontal: 15,

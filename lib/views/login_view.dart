@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/constants.dart';
-import 'package:recipe_app/views/login_view.dart';
 import 'package:recipe_app/widgets/custom_button.dart';
 import 'package:recipe_app/widgets/custom_form.dart';
 import 'package:recipe_app/widgets/platform_login_widget.dart';
 import 'package:recipe_app/widgets/remember_me.dart';
 
-class SignupView extends StatefulWidget {
-  static String id = "SignupView";
+class LoginView extends StatefulWidget {
+  static String id = "LoginView";
 
-  const SignupView({super.key});
+  const LoginView({super.key});
 
   @override
-  State<SignupView> createState() => _SignupViewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _SignupViewState extends State<SignupView> {
+class _LoginViewState extends State<LoginView> {
   final GlobalKey<FormState> formKey = GlobalKey();
 
   @override
@@ -86,7 +85,7 @@ class _SignupViewState extends State<SignupView> {
                 ),
               ),
               const Text(
-                "Create Your Account",
+                "Register To Your Account",
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w900,
@@ -103,7 +102,7 @@ class _SignupViewState extends State<SignupView> {
               ),
               const SizedBox(height: 10),
               CustomButton(
-                btnName: "Sign up",
+                btnName: "Login",
                 onPressed: () {
                   if (formKey.currentState!.validate()) {}
                 },
@@ -113,7 +112,7 @@ class _SignupViewState extends State<SignupView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Already Have an account?",
+                    "Don't Have an account?",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey.shade900,
@@ -121,11 +120,9 @@ class _SignupViewState extends State<SignupView> {
                   ),
                   const SizedBox(width: 5),
                   GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, LoginView.id);
-                    },
+                    onTap: () => Navigator.pop(context),
                     child: const Text(
-                      "Login",
+                      "Sign up",
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w900,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/views/login_view.dart';
 import 'package:recipe_app/views/signup_view.dart';
 import 'package:recipe_app/views/splash_view.dart';
 
@@ -16,6 +17,7 @@ class RecipeApp extends StatelessWidget {
       routes: {
         SplashView.id: (context) => const SplashView(),
         SignupView.id: (context) => const SignupView(),
+        LoginView.id: (context) => const LoginView(),
       },
       initialRoute: SplashView.id,
     );
