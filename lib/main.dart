@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/views/food_view.dart';
 import 'package:recipe_app/views/login_view.dart';
 import 'package:recipe_app/views/signup_view.dart';
 import 'package:recipe_app/views/splash_view.dart';
@@ -18,8 +19,10 @@ class RecipeApp extends StatelessWidget {
         SplashView.id: (context) => const SplashView(),
         SignupView.id: (context) => const SignupView(),
         LoginView.id: (context) => const LoginView(),
+        FoodView.id: (context) => const FoodView(),
       },
-      initialRoute: SplashView.id,
+      // initialRoute: SplashView.id,
+      initialRoute: FoodView.id,
     );
   }
 }
