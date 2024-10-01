@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe_app/widgets/custom_trend_food_title.dart';
 
 class CustomTrendingFoodContainer extends StatelessWidget {
-  const CustomTrendingFoodContainer({super.key});
+  final String foodName;
+  const CustomTrendingFoodContainer({required this.foodName, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +17,14 @@ class CustomTrendingFoodContainer extends StatelessWidget {
           fit: BoxFit.fill,
         ),
       ),
-      child: const Stack(
+      child: Stack(
         children: [
-          CustomTrendFoodTitle(title: "Italian Pizza"),
-          Positioned(
+          CustomTrendFoodTitle(
+            title: foodName,
+            width: 200,
+            height: 30,
+          ),
+          const Positioned(
             top: 8,
             left: -2,
             bottom: 16,

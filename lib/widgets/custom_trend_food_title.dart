@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 
 class CustomTrendFoodTitle extends StatelessWidget {
   final String title;
-  const CustomTrendFoodTitle({super.key, required this.title});
+  final double width, height;
+  const CustomTrendFoodTitle({
+    super.key,
+    required this.title,
+    required this.height,
+    required this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +23,8 @@ class CustomTrendFoodTitle extends StatelessWidget {
         ),
       ),
       alignment: Alignment.bottomLeft,
-      width: 200,
-      height: 30,
+      width: width,
+      height: height,
       child: Text(
         title,
         style: const TextStyle(

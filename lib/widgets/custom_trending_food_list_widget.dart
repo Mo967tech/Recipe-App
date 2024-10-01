@@ -10,7 +10,8 @@ class CustomTrendingFoodListWidget extends StatelessWidget {
       height: 140,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => const CustomTrendingFoodContainer(),
+        itemBuilder: (context, index) =>
+            const CustomTrendingFoodContainer(foodName: "Italian Pizza"),
         itemCount: 5,
         separatorBuilder: (context, index) => const SizedBox(width: 20),
       ),
